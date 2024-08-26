@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --black-500: #0A0A0A;
+  --gray-100: #A4A4A4;
+  --gray-200: #3D3D3D;
+  --gray-300: #5D5D5D;
+  --gray-500: #1F1F1F;
+  --white-100: #FAFAFA;
+  --white-500: #FFFFFF;
+  --blue-500: #00B5CC;
+  --green-500: #B2DF28;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--gray-500);
+  font-family: "Poppins", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+// font-family: "Creepster", system-ui;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
