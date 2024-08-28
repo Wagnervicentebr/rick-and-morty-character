@@ -34,11 +34,13 @@ export class SearchCharacterComponent implements OnInit {
       startWith(''),
       debounceTime(300),
       distinctUntilChanged(),
+      tap(() => this.loading = true),
       switchMap(query => query ? this.characterService.getCharacterBySearchName(query) : this.characterService.getAllCharacter()),
       tap(response => {
         this.characters = response.results;
         this.currentPageUrl = response.info.next;
         this.hasMore = !!response.info.next;
+        this.loading = false;
       })
     ).subscribe();
   }
@@ -61,11 +63,13 @@ export class SearchCharacterComponent implements OnInit {
   }
 
   loadMoreCharacters(urlNextPage: string): void {
+    this.loading = true;
     this.characterService.nextPage(urlNextPage).pipe(
       tap(response => {
         this.characters = [...this.characters, ...response.results];
         this.currentPageUrl = response.info.next;
         this.hasMore = !!response.info.next;
+        this.loading = false;
       })
     ).subscribe();
   }
