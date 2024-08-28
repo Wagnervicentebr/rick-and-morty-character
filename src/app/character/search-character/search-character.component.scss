@@ -1,0 +1,95 @@
+
+.character-container {
+  width: 90%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 4% 2%;
+  text-align: center;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-family: "Creepster", system-ui;
+  font-size: 48px;
+  color: var(--blue-500);
+  -webkit-text-stroke: 2px var(--green-500);
+  text-align: center;
+  padding-top: 2%;
+}
+
+
+.search-bar {
+  display: flex;
+  max-width: 400px;
+}
+
+.custom-input {
+  font-family: "Poppins", system-ui;
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: var(--white-500);
+  background-color: var(--gray-500);
+  border: 1px solid var(--gray-200);
+  border-radius: 15px;
+  outline: none;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+
+.list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+  padding-top: 5%;
+}
+
+.empty-list-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 5%;
+  min-height: 500px;
+  background: var(--black-500);
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+}
+
+.empty-list-container h2 {
+  font-size: 24px;
+  color: var(--white-100);
+  font-weight: 700;
+}
+
+.empty-list-container h3{
+  font-size: 18px;
+  color: var(--gray-100);
+}
+
+
+.spinner-loading {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+}
+
+.btn-scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+}

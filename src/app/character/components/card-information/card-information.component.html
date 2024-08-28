@@ -1,0 +1,21 @@
+<mat-card class="card" appearance="outlined">
+  <mat-icon
+    aria-hidden="false"
+    aria-label="icon favorite"
+    fontIcon="favorite"
+    (click)="setFavorite(character)"
+    [ngClass]="{'active': character.isFavorited}">
+  </mat-icon>
+  <img mat-card-image [src]="character.image" [alt]="character.name">
+  <mat-card-content>
+    <div class="card-content">
+      <strong>
+        {{ character.name }}
+      </strong>
+      <br>
+      <span>
+        {{ character.species }}
+      </span>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,27 @@
+<div class="character-container" infinite-scroll (scrolled)="onScrollDown()">
+  <div class="header-content">
+    <div class="content-title">
+      <h1 class="title">Início</h1>
+    </div>
+    <div class="search-bar">
+      <input type="text" class="custom-input" placeholder="Pesquisar" [formControl]="searchCharacter">
+    </div>
+  </div>
+
+  <ng-container *ngIf="characters.length > 0; else emptyList">
+    <div class="list-container">
+      <div *ngFor="let characterItem of characters">
+        <app-card-information [character]="characterItem"></app-card-information>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #emptyList>
+    <div class="empty-list-container">
+      <h2>Nada foi encontrado</h2>
+      <h3>Tente realizar uma nova busca.</h3>
+    </div>
+  </ng-template>
+
+  <button class="btn-scroll-top" *ngIf="showButtonScrollTop" (click)="onScrollTop()">Scroll top</button>
+</div>

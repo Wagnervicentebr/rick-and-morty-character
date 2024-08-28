@@ -1,4 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+$primary: mat.define-palette(mat.$indigo-palette, 700);
+$accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$theme: mat.define-light-theme((
+  color: (
+    primary: $primary,
+    accent: $accent,
+    warn: mat.define-palette(mat.$red-palette),
+  ),
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+
 :root {
   --black-500: #0A0A0A;
   --gray-100: #A4A4A4;
@@ -9,6 +22,7 @@
   --white-500: #FFFFFF;
   --blue-500: #00B5CC;
   --green-500: #B2DF28;
+  --red-500: red;
 }
 
 * {
@@ -17,14 +31,12 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
+  height: 100%;
   background: var(--gray-500);
   font-family: "Poppins", system-ui;
   font-weight: 400;
   font-style: normal;
+  scroll-behavior: smooth;
 }
 
-// font-family: "Creepster", system-ui;
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

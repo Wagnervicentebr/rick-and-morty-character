@@ -1,0 +1,51 @@
+
+.card {
+  position: relative;
+  max-width: 200px;
+  background-color: var(--black-500);
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+}
+
+.card mat-icon {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 3%;
+  right: 3%;
+  z-index: 1;
+  color: white;
+}
+
+.card .active {
+  color: red;
+}
+
+.card mat-icon:hover {
+  transform: scale(1.2);
+  color: red;
+  cursor: pointer;
+}
+.card:hover {
+  box-shadow: 10px 6px 12px var(--green-500);
+}
+
+
+.card-content {
+  text-align: left;
+  width: 100%;
+  padding-top: 10%;
+  height: 90px;
+  gap: .5rem;
+}
+
+.card-content strong {
+  font-family: "Creepster", system-ui;
+  font-size: 24px;
+  color: var(--white-100);
+}
+
+.card-content span {
+  font-size: 16px;
+  color: var(--gray-100);
+}

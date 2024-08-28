@@ -1,0 +1,32 @@
+<header class="header-container">
+  <div>
+    <img src="../../../assets/logo-rick-morty.svg" alt="">
+  </div>
+  <div class="nav-container">
+    <button
+      class="nav-button"
+      (click)="onTabChanged(0)"
+      [ngClass]="{'active': tableActive === 'home'}">
+      <mat-icon
+        aria-hidden="false"
+        class="icon-home"
+        aria-label="icon cottage"
+        fontIcon="cottage">
+      </mat-icon>
+      Início
+    </button>
+    <button
+      class="nav-button"
+      (click)="onTabChanged(1)"
+      [ngClass]="{'active': tableActive === 'favorites'}">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="icon favorite"
+        class="icon-favorite"
+        fontIcon="favorite">
+      </mat-icon>
+      Favoritos
+      <span class="badge" *ngIf="favorites$ | async as character">{{character.length}}</span>
+    </button>
+  </div>
+</header>

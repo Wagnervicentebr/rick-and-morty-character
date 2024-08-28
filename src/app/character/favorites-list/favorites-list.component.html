@@ -1,0 +1,27 @@
+<div class="favorite-container">
+  <div class="header-content">
+    <div class="content-title">
+      <h1 class="title">Favoritos</h1>
+    </div>
+  </div>
+
+  <div *ngIf="favorites$ | async as character; else emptyList">
+    <div class="list-container" >
+      <div *ngFor="let characterItem of character">
+        <app-card-information [character]="characterItem"/>
+      </div>
+    </div>
+
+    <div class="empty-list-container" *ngIf="character.length <= 0">
+      <h2>Parece que você ainda não tem favoritos</h2>
+      <h3>Volte à página inicial e escolha os melhores para você.</h3>
+      <button mat-raised-button (click)="goToHome()">Voltar ao início</button>
+    </div>
+  </div>
+
+  <ng-template #emptyList>
+    <div class="spinner-loading">
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-template>
+</div>
