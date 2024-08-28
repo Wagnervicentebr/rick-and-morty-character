@@ -23,5 +23,14 @@
     </div>
   </ng-template>
 
-  <button class="btn-scroll-top" *ngIf="showButtonScrollTop" (click)="onScrollTop()">Scroll top</button>
+  <div class="scroll-top" *ngIf="showButtonScrollTop">
+    <mat-icon
+      aria-hidden="false"
+      aria-label="icon arrowupward"
+      fontIcon="arrow_upward"
+      class="icon"
+      (click)="onScrollTop()">
+    </mat-icon>
+    <span>Go to Top</span>
+  </div>
 </div>
